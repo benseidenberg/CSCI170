@@ -1,0 +1,19 @@
+(library
+ (name json)
+ (modules json))
+
+(library
+ (name hw4)
+ (modules hw4)
+ (libraries json))
+
+(test
+ (name hw4test)
+ (modules hw4test)
+ (libraries hw4 json ounit2))
+
+; The setting below specifies a strict development environment 
+; with all warnings as errors.
+(env
+  (dev
+    (flags (:standard -warn-error +A))))
